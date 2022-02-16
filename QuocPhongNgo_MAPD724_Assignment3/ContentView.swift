@@ -28,48 +28,49 @@ struct ContentView: View {
     @State private var message: String = ""
     @State private var jackPot = 5000
     var body: some View {
-        ZStack {
-            Rectangle()
+        NavigationView {
+            ZStack {
+                Rectangle()
                 .foregroundColor(Color(red: 197/255,
                     green: 231/255, blue: 255/255))
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                Spacer()
-                HStack {
-                    Text("Slot Machine")
+                VStack {
+                    HStack {
+                        Text("Slot Machine")
                         .bold()
                         .foregroundColor(Color(red: 137/255, green: 80/255, blue: 23/255))
-                }.scaleEffect(2)
-                HStack {
-                    // logo
-                    Image("slot-machine").resizable()
+                    }.scaleEffect(2)
+                
+                    HStack {
+                        // logo
+                        Image("slot-machine").resizable()
                         .frame(width: 95.0, height: 95.0)
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.white.opacity(0.8))
                         .cornerRadius(20)
                         .padding(.all, 10)
-                }.padding(.bottom, 30)
-                // Jackpot money
-                Text("Jackpot: " + String(jackPot))
+                    }.padding(.bottom, 10)
+                    // Jackpot money
+                    Text("Jackpot: " + String(jackPot))
                     .bold()
                     .foregroundColor(Color(red: 137/255, green: 80/255, blue: 23/255))
                     .padding(.all, 10)
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(20)
-                // Credits
-                Text("Player Money: " + String(playerMoney))
+                    // Credits
+                    Text("Player Money: " + String(playerMoney))
                     .foregroundColor(.black)
                     .padding(.all, 10)
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(20)
-                HStack {
-                    Text("Bet Amount: ")
+                    HStack {
+                        Text("Bet Amount: ")
                         .foregroundColor(.black)
                         .padding(.all, 10)
                         .background(Color.white.opacity(0.8))
                         .cornerRadius(20)
-                    let binding = Binding<String>(get: {
+                        let binding = Binding<String>(get: {
                                 self.playerBet
                             }, set: {
                                 self.playerBet = $0
@@ -78,41 +79,41 @@ struct ContentView: View {
                                     self.isDisabledSpinButton = false
                                 }
                             })
-                    TextField("Enter Bet", text: binding)
+                        TextField("Enter Bet", text: binding)
                         .foregroundColor(.red)
                         .padding(.all, 10)
                         .frame(width: 100, height: 35, alignment: .trailing)
-                }
+                    }
                 
-                // Cards
-                HStack {
-                    Spacer()
-                    Image(symbols[numbers[0]]).resizable()
+                    // Cards
+                    HStack {
+                        Spacer()
+                        Image(symbols[numbers[0]]).resizable()
                         .frame(width: 95.0, height: 95.0)
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.black.opacity(0.8))
                         .cornerRadius(20)
                         .padding(.all, 10)
                     
-                    Image(symbols[numbers[1]]).resizable()
+                        Image(symbols[numbers[1]]).resizable()
                         .frame(width: 95.0, height: 95.0)
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.black.opacity(0.8))
                         .cornerRadius(20)
                         .padding(.all, 10)
                     
-                    Image(symbols[numbers[2]]).resizable()
+                        Image(symbols[numbers[2]]).resizable()
                         .frame(width: 95.0, height: 95.0)
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.black.opacity(0.8))
                         .cornerRadius(20)
                         .padding(.all, 10)
-                    Spacer()
-                }
+                        Spacer()
+                    }
                
-                // Message
-                HStack {
-                    TextField("", text: $message)
+                    // Message
+                    HStack {
+                        TextField("", text: $message)
 //                        .bold()
                         .foregroundColor(Color(red: 255/255, green: 45/255, blue: 147/255))
                         .padding(10)
@@ -120,52 +121,58 @@ struct ContentView: View {
                         .font(.system(size: 24, weight: .heavy, design: .default))
                         .background(Color(red: 0/255, green: 29/255, blue: 38/255))
                         
-                }
+                    }
                 
                 // Spin Button
-                HStack {
-                    Button(action: spinPressedButton) {
+                    HStack {
+                        Button(action: spinPressedButton) {
                         Text("Spin")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 20)
                             .background(self.isDisabledSpinButton == true ? Color.gray : Color.blue)
                             .cornerRadius(20)
-                    }.padding(.bottom, 30).disabled(self.isDisabledSpinButton)
-                }
+                    }.padding(.bottom, 10).disabled(self.isDisabledSpinButton)
+                    }
                                 
-                HStack {
+                    HStack {
                     // Reset Button
-                    Button(action: resetButton) {
+                        Button(action: resetButton) {
                         Text("Reset")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 15)
                             .background(.orange)
                             .cornerRadius(20)
-                    }.padding(.bottom, 50)
-                    // Quit Button
-                    Button(action: quitButton) {
+                        }.padding(.bottom, 20)
+                        // Quit Button
+                        Button(action: quitButton) {
                         Text("Quit")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 15)
                             .background(.orange)
                             .cornerRadius(20)
-                    }.padding(.bottom, 50)
+                    }.padding(.bottom, 20)
                     .confirmationDialog(
-                    "Are you sure you want to import this file?",
-                    isPresented: $confirmExit)
-                    {
-                        Button {
-                            // Handle import action.
-                            exit(0)
-                        } label: {
-                            Text("OK")
-                        }
-                        Button("Cancel", role: .cancel) {
+                    "Are you sure you want to quit this game?",
+                        isPresented: $confirmExit)
+                        {
+                            Button {
+                                // Handle import action.
+                                exit(0)
+                            } label: {
+                                Text("OK")
+                            }
+                            Button("Cancel", role: .cancel) {
+                            }
                         }
                     }
+                    NavigationLink(destination:HelpView(), label: {
+                            Text("Help")
+                            .bold()
+                            .foregroundColor(Color(red: 137/255, green: 80/255, blue: 23/255))
+                    })
                 }
             }
         }

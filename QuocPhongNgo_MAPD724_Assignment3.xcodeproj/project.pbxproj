@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3190E2C327BB204D00240F47 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3190E2C227BB204D00240F47 /* HelpView.swift */; };
 		31B8DA3A2795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift */; };
 		31B8DA3C2795D239001C4486 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8DA3B2795D239001C4486 /* ContentView.swift */; };
 		31B8DA3E2795D23A001C4486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B8DA3D2795D23A001C4486 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3190E2C227BB204D00240F47 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		31B8DA362795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuocPhongNgo_MAPD724_Assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuocPhongNgo_MAPD724_Assignment1App.swift; sourceTree = "<group>"; };
 		31B8DA3B2795D239001C4486 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift */,
 				31B8DA3B2795D239001C4486 /* ContentView.swift */,
+				3190E2C227BB204D00240F47 /* HelpView.swift */,
 				31B8DA3D2795D23A001C4486 /* Assets.xcassets */,
 				31B8DA422795D23A001C4486 /* Persistence.swift */,
 				31B8DA442795D23A001C4486 /* QuocPhongNgo_MAPD724_Assignment1.xcdatamodeld */,
@@ -146,6 +149,7 @@
 				31B8DA462795D23A001C4486 /* QuocPhongNgo_MAPD724_Assignment1.xcdatamodeld in Sources */,
 				31B8DA432795D23A001C4486 /* Persistence.swift in Sources */,
 				31B8DA3C2795D239001C4486 /* ContentView.swift in Sources */,
+				3190E2C327BB204D00240F47 /* HelpView.swift in Sources */,
 				31B8DA3A2795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
