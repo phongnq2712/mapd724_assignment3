@@ -8,9 +8,15 @@
  */
 
 import SwiftUI
+import Firebase
 
 @main
-struct QuocPhongNgo_MAPD724_Assignment1App: App {
+struct QuocPhongNgo_MAPD724_Assignment3App: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

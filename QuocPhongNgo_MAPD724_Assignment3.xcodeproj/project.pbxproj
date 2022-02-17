@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3139F13027BDB1490072AC3D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3139F12F27BDB1490072AC3D /* FirebaseAnalytics */; };
+		3139F13227BDB1490072AC3D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3139F13127BDB1490072AC3D /* FirebaseDatabase */; };
+		3139F13427BDB1490072AC3D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3139F13327BDB1490072AC3D /* FirebaseFirestore */; };
+		3139F13927BDB3400072AC3D /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139F13827BDB3400072AC3D /* ScoreViewModel.swift */; };
+		3139F13B27BDB3AA0072AC3D /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139F13A27BDB3AA0072AC3D /* Score.swift */; };
+		3139F14127BE15D40072AC3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3139F14027BE15D40072AC3D /* GoogleService-Info.plist */; };
 		3190E2C327BB204D00240F47 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3190E2C227BB204D00240F47 /* HelpView.swift */; };
-		31B8DA3A2795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift */; };
+		31B8DA3A2795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3App.swift */; };
 		31B8DA3C2795D239001C4486 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8DA3B2795D239001C4486 /* ContentView.swift */; };
 		31B8DA3E2795D23A001C4486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B8DA3D2795D23A001C4486 /* Assets.xcassets */; };
 		31B8DA412795D23A001C4486 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B8DA402795D23A001C4486 /* Preview Assets.xcassets */; };
@@ -17,10 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3139F13827BDB3400072AC3D /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		3139F13A27BDB3AA0072AC3D /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		3139F14027BE15D40072AC3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3190E2C227BB204D00240F47 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		31B8DA362795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuocPhongNgo_MAPD724_Assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuocPhongNgo_MAPD724_Assignment1App.swift; sourceTree = "<group>"; };
-		31B8DA3B2795D239001C4486 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuocPhongNgo_MAPD724_Assignment3App.swift; sourceTree = "<group>"; };
+		31B8DA3B2795D239001C4486 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		31B8DA3D2795D23A001C4486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B8DA402795D23A001C4486 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31B8DA422795D23A001C4486 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -32,12 +41,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3139F13227BDB1490072AC3D /* FirebaseDatabase in Frameworks */,
+				3139F13027BDB1490072AC3D /* FirebaseAnalytics in Frameworks */,
+				3139F13427BDB1490072AC3D /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3139F13527BDB2D70072AC3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3139F13827BDB3400072AC3D /* ScoreViewModel.swift */,
+				3139F13A27BDB3AA0072AC3D /* Score.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		31B8DA2D2795D239001C4486 = {
 			isa = PBXGroup;
 			children = (
@@ -57,12 +78,14 @@
 		31B8DA382795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3 */ = {
 			isa = PBXGroup;
 			children = (
-				31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift */,
+				3139F13527BDB2D70072AC3D /* Model */,
+				31B8DA392795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3App.swift */,
 				31B8DA3B2795D239001C4486 /* ContentView.swift */,
 				3190E2C227BB204D00240F47 /* HelpView.swift */,
 				31B8DA3D2795D23A001C4486 /* Assets.xcassets */,
 				31B8DA422795D23A001C4486 /* Persistence.swift */,
 				31B8DA442795D23A001C4486 /* QuocPhongNgo_MAPD724_Assignment1.xcdatamodeld */,
+				3139F14027BE15D40072AC3D /* GoogleService-Info.plist */,
 				31B8DA3F2795D23A001C4486 /* Preview Content */,
 			);
 			path = QuocPhongNgo_MAPD724_Assignment3;
@@ -92,6 +115,11 @@
 			dependencies = (
 			);
 			name = QuocPhongNgo_MAPD724_Assignment3;
+			packageProductDependencies = (
+				3139F12F27BDB1490072AC3D /* FirebaseAnalytics */,
+				3139F13127BDB1490072AC3D /* FirebaseDatabase */,
+				3139F13327BDB1490072AC3D /* FirebaseFirestore */,
+			);
 			productName = QuocPhongNgo_MAPD724_Assignment1;
 			productReference = 31B8DA362795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +148,9 @@
 				Base,
 			);
 			mainGroup = 31B8DA2D2795D239001C4486;
+			packageReferences = (
+				3139F12E27BDB1490072AC3D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 31B8DA372795D239001C4486 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -136,6 +167,7 @@
 			files = (
 				31B8DA412795D23A001C4486 /* Preview Assets.xcassets in Resources */,
 				31B8DA3E2795D23A001C4486 /* Assets.xcassets in Resources */,
+				3139F14127BE15D40072AC3D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,11 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3139F13B27BDB3AA0072AC3D /* Score.swift in Sources */,
 				31B8DA462795D23A001C4486 /* QuocPhongNgo_MAPD724_Assignment1.xcdatamodeld in Sources */,
 				31B8DA432795D23A001C4486 /* Persistence.swift in Sources */,
 				31B8DA3C2795D239001C4486 /* ContentView.swift in Sources */,
 				3190E2C327BB204D00240F47 /* HelpView.swift in Sources */,
-				31B8DA3A2795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment1App.swift in Sources */,
+				31B8DA3A2795D239001C4486 /* QuocPhongNgo_MAPD724_Assignment3App.swift in Sources */,
+				3139F13927BDB3400072AC3D /* ScoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +385,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3139F12E27BDB1490072AC3D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3139F12F27BDB1490072AC3D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3139F12E27BDB1490072AC3D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3139F13127BDB1490072AC3D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3139F12E27BDB1490072AC3D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		3139F13327BDB1490072AC3D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3139F12E27BDB1490072AC3D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		31B8DA442795D23A001C4486 /* QuocPhongNgo_MAPD724_Assignment1.xcdatamodeld */ = {

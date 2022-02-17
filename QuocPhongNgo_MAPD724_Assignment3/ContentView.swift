@@ -4,13 +4,14 @@
  * Author:         Quoc Phong Ngo
  * Student ID:   301148406
  * Version:        1.0
- * Date Modified:   February 14th, 2022
+ * Date Modified:   February 17th, 2022
  */
 
 import SwiftUI
 import CoreData
 
 struct ContentView: View {
+        
     @Environment(\.managedObjectContext) private var viewContext
 
     private var symbols = ["apple", "cherry", "lemon", "orange", "strawberry", ""]
@@ -27,6 +28,7 @@ struct ContentView: View {
     @State private var confirmExit = false
     @State private var message: String = ""
     @State private var jackPot = 5000
+    @ObservedObject private var scoreVM = ScoreViewModel()
     var body: some View {
         NavigationView {
             ZStack {
@@ -36,12 +38,18 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             
                 VStack {
+//                    HStack {
+//                        Text("Slot Machine")
+//                        .bold()
+//                        .foregroundColor(Color(red: 137/255, green: 80/255, blue: 23/255))
+//                    }.scaleEffect(2)
+                    
                     HStack {
-                        Text("Slot Machine")
+                        Text("The highest score: " + String(self.scoreVM.getTheHighestScore()))
                         .bold()
-                        .foregroundColor(Color(red: 137/255, green: 80/255, blue: 23/255))
-                    }.scaleEffect(2)
-                
+
+                    }
+                                    
                     HStack {
                         // logo
                         Image("slot-machine").resizable()
@@ -122,7 +130,6 @@ struct ContentView: View {
                         .background(Color(red: 0/255, green: 29/255, blue: 38/255))
                         
                     }
-                
                 // Spin Button
                     HStack {
                         Button(action: spinPressedButton) {
@@ -160,6 +167,7 @@ struct ContentView: View {
                         {
                             Button {
                                 // Handle import action.
+                                
                                 exit(0)
                             } label: {
                                 Text("OK")
