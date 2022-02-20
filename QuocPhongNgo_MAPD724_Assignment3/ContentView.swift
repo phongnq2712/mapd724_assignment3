@@ -4,7 +4,7 @@
  * Author:         Quoc Phong Ngo
  * Student ID:   301148406
  * Version:        1.0
- * Date Modified:   February 17th, 2022
+ * Date Modified:   February 19th, 2022
  */
 
 import SwiftUI
@@ -26,6 +26,7 @@ struct ContentView: View {
     @State private var playerBet: String = ""
     @State private var isDisabledSpinButton = false
     @State private var confirmExit = false
+    @State private var showingAlert = false
     @State private var message: String = ""
     @State private var jackPot = 5000
     @ObservedObject private var scoreVM = ScoreViewModel()
@@ -153,28 +154,39 @@ struct ContentView: View {
                             .cornerRadius(20)
                         }.padding(.bottom, 20)
                         // Quit Button
-                        Button(action: quitButton) {
-                        Text("Quit")
+                        Button(action: saveScoreButton) {
+                        Text("Save Score")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 15)
                             .background(.orange)
                             .cornerRadius(20)
                     }.padding(.bottom, 20)
-                    .confirmationDialog(
-                    "Are you sure you want to quit this game?",
-                        isPresented: $confirmExit)
-                        {
-                            Button {
-                                // Handle import action.
-                                
-                                exit(0)
-                            } label: {
-                                Text("OK")
+                    .alert("Save score successfully!", isPresented: $showingAlert) {
+                                Button("OK", role: .cancel) { }
                             }
-                            Button("Cancel", role: .cancel) {
-                            }
-                        }
+                    
+                        Button(action: quitButton) {
+                            Text("Quit")
+                                .bold()
+                                .foregroundColor(.white)
+                                .padding(.all, 15)
+                                .background(.orange)
+                                .cornerRadius(20)
+                            }.padding(.bottom, 20)
+                        .confirmationDialog(
+                            "Are you sure you want to quit this game?",
+                                isPresented: $confirmExit)
+                                {
+                                    Button {
+                                        // Handle import action.
+                                        exit(0)
+                                    } label: {
+                                        Text("OK")
+                                    }
+                                    Button("Cancel", role: .cancel) {
+                                    }
+                                }
                     }
                     NavigationLink(destination:HelpView(), label: {
                             Text("Help")
@@ -184,6 +196,14 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    /**
+     * Save score button event
+     */
+    private func saveScoreButton() {
+        self.scoreVM.addData(score: self.playerMoney)
+        showingAlert = true
     }
     
     /**
@@ -259,6 +279,7 @@ struct ContentView: View {
             case 5:
                 // Lost
                 self.playerMoney -= currentBet
+                self.jackPot += currentBet
                 self.message = "You lost!"
                 break
             default:

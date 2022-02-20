@@ -4,7 +4,7 @@
  * Author:         Quoc Phong Ngo
  * Student ID:   301148406
  * Version:        1.0
- * Date Modified:   February 17th, 2022
+ * Date Modified:   February 19th, 2022
  */
 
 import Foundation
@@ -14,11 +14,30 @@ class ScoreViewModel: ObservableObject {
     
     @Published var scores = [Score]()
     private var db = Firestore.firestore()
-    
+        
     init() {
         self.fetchData()
     }
-        
+    
+    /**
+     * Add new score to Firebase Firestore
+     */
+    func addData(score: Int) {
+        var ref: DocumentReference? = nil
+        ref = db.collection("scores").addDocument(data: [
+            "score": score
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
+    /**
+     * Read data from Firebase Firestore
+     */
     func fetchData() {
         db.collection("scores").addSnapshotListener { [self] (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
